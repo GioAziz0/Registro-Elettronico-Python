@@ -1,3 +1,5 @@
+#Admin Menu
+
 import tkinter as tk
 from tkinter import messagebox
 import ttkbootstrap as tb
@@ -6,8 +8,6 @@ import pickle
 import string
 import SetUser as SU
 import SetDefaults as SD
-
-
 
 def change_to_primary(event):
     event.widget.config(bootstyle="Primary")
