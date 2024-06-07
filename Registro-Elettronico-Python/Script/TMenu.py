@@ -72,14 +72,14 @@ class Teacher():
 
         self.Frame3C = tk.StringVar()
         RBfA = tb.Radiobutton(self.frame2_1, text="Appello", value='A', bootstyle="bg-outline-toolbutton", variable = self.Frame3C) #RadioButton self.Frame2 Opzione1
-        RBfG = tb.Radiobutton(self.frame2_1, text="Voti", value='G', bootstyle="bg-outline-toolbutton", variable = self.Frame3C)
-        RBfE = tb.Radiobutton(self.frame2_1, text="Eventi", value='E', bootstyle="bg-outline-toolbutton", variable = self.Frame3C)
+        #RBfG = tb.Radiobutton(self.frame2_1, text="Voti", value='G', bootstyle="bg-outline-toolbutton", variable = self.Frame3C)
+        #RBfE = tb.Radiobutton(self.frame2_1, text="Eventi", value='E', bootstyle="bg-outline-toolbutton", variable = self.Frame3C)
         self.Frame3C.set('A')
         
 
         RBfA.grid(column=0, row=0, padx=5, pady=5)
-        RBfG.grid(column=1, row=0, padx=5, pady=5)
-        RBfE.grid(column=2, row=0, padx=5, pady=5)
+        #RBfG.grid(column=1, row=0, padx=5, pady=5)
+        #RBfE.grid(column=2, row=0, padx=5, pady=5)
         
         self.Frame3C.trace_add("write", self.Frame3_Selector)
 
@@ -259,7 +259,7 @@ class Teacher():
             self.View(button)
             
 
-    def View(self, button):
+    def View(self, button=None):
 
         studentsIDs = list(SIS.lessons[self.hour-1]['presences']) + list(SIS.lessons[self.hour-1]['absences'])
         students = []
@@ -331,7 +331,7 @@ class Teacher():
                 #print(f"Impostando su presente: {SIS.lessons[self.hour-1]['absences']}")
                 if id == student.userID:
                     SIS.lessons[self.hour-1]['absences'].discard(id)
-                    SIS.lessons[self.hour-1]['presences'].append(id)
+                    SIS.lessons[self.hour-1]['presences'].add(id)
             button.config(text="Presente", bootstyle="Success")
             
             for st in self.stds:
