@@ -60,9 +60,7 @@ class LoginWindow:
             else:
                 for us in SIS.all_teachers:
                     usr = SIS.all_teachers[us]
-                    print(usr.userID, username)
                     if usr.userID == username:
-                        print(usr.password, password)
                         if usr.password == password:
                             if usr.password == "firstlogin":
                                 NP = NewPassword(self, usr)

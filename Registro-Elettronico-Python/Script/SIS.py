@@ -24,7 +24,7 @@ def loadD():
             hours_lessons = DEFAULTS['hours_x_lesson']
             pswAdmin = DEFAULTS['admin-password']
     except FileNotFoundError:
-        print("DEFAULTS file not found")
+        print("DEFAULTS file not found or not generated yet")
     except EOFError:
         print("DEFAULTS file is empty")
 
@@ -105,7 +105,7 @@ def load2(cl, date):
         
         print(lessonsfile)
     except FileNotFoundError:
-        print("No lessons found for date and class given")
+        print("No lessons registerd for date and class given")
 
 def dump():
     stFile = "files/students.pickle"
