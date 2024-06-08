@@ -24,7 +24,10 @@ class Admin():
         self.root.minsize(550, 350)
         self.root.focus_set()
         #self.root.bind_class("Entry", "<Escape>", self.on_escape)
-        self.root.iconbitmap('icons/Gear.ico')
+        try:
+            self.root.iconbitmap('icons/MOD.ico')
+        except Exception:
+            pass
 
         self.parent = prt
 

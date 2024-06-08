@@ -14,7 +14,10 @@ class LoginWindow:
         self.root = root
 
         self.root.title("Finestra di Login")
-        self.root.iconbitmap('icons/Login.ico')
+        try:
+            self.root.iconbitmap('icons/Login.ico')
+        except Exception:
+            pass
         
         # Frame per organizzare gli elementi
         self.frame = tb.Frame(root)
@@ -94,7 +97,11 @@ class NewPassword:
         self.root = tb.Toplevel(prt)
         self.root.title("Nuova password")
         self.root.geometry("400x300")
-        self.root.iconbitmap('icons/Password.ico')
+        try:
+            self.root.iconbitmap('icons/Password.ico')
+        except Exception:
+            pass
+        
         self.root.grab_set()
 
         self.r = r

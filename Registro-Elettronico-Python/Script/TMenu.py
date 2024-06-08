@@ -35,7 +35,11 @@ class Teacher():
         #root.minsize(550, 350)
         root.focus_set()
         root.bind("<Escape>", lambda event: root.focus_set())
-        root.iconbitmap('icons/Cap.ico')
+
+        try:
+            root.iconbitmap('icons/Cap.ico')
+        except Exception:
+            pass
 
         self.parent = prt
         root.protocol("WM_DELETE_WINDOW", self.parent.close)

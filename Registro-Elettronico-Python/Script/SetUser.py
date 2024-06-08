@@ -13,7 +13,10 @@ class NewUser():
         self.root.geometry("500x600")
         self.root.minsize(450, 200)
         self.root.focus_set()
-        self.root.iconbitmap('icons/UserGear.ico')
+        try:
+            self.root.iconbitmap('icons/UserGear.ico')
+        except Exception:
+            pass
 
         self.frameT = tb.Frame(self.root, bootstyle="info")
         self.frameB = tb.Frame(self.root, bootstyle="info")
